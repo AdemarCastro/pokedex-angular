@@ -1,27 +1,64 @@
-# PokedexAngular
+# Pokedex Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Este é o repositório do projeto Pokedex Angular, um projeto baseado em Angular. Este README fornece as informações necessárias para configurar e iniciar o projeto.
 
-## Development server
+## Pré-requisitos 📋
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Certifique-se de que as seguintes dependências estejam instaladas em seu sistema antes de começar:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/): Certifique-se de que o Node.js esteja instalado.
+- [NPM (Node Package Manager)](https://www.npmjs.com/): O NPM geralmente é instalado junto com o Node.js.
+- [Angular CLI](https://cli.angular.io/): Instale o Angular CLI globalmente com o seguinte comando:
+  ```
+  npm install -g @angular/cli
+  ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Clonando o Repositório 🔎
 
-## Build
+Para clonar este repositório em sua pasta de desenvolvimento, siga os passos abaixo:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Execute o comando Git Clone com a URL ou SSH do repositório:
 
-## Running unit tests
+   ```
+   git clone -b <nome_da_branch> --single-branch <URL_do_repositório>
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   Substitua "URL ou SSH" pela URL ou SSH do repositório.
 
-## Running end-to-end tests
+2. Navegue até o diretório do projeto:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```
+   cd nome_do_projeto
+   ```
 
-## Further help
+   Substitua "nome_do_projeto" pelo nome do diretório do projeto.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Instale as dependências do Node no projeto:
+
+   ```
+   npm install
+   ```
+
+   Isso instalará todas as dependências necessárias para o projeto.
+
+## Executando o Projeto 🧑‍💻
+
+Após clonar o repositório e instalar as dependências, você pode iniciar o projeto com os comandos apropriados do Angular. Certifique-se de estar no diretório do projeto.
+
+Para iniciar o servidor de desenvolvimento do Angular, use o seguinte comando:
+
+```
+ng serve
+```
+
+## [Prefixos dos Commits](https://github.com/JuniorLima22/padroes-e-nomenclaturas-no-git#prefixos-dos-commits)
+- 📚 [DOCS]: apenas mudanças de documentação.
+- ✨ [FEAT]: Adição de uma nova feature ao projeto, componente, etc.
+- 🐞 [FIX]: Correção de um bug.
+- ⚡ [PERF]: Melhoria de performance.
+- 🛠️ [REFACTOR]: Refatoração do código que não adiciona uma funcionalidade nem corrige um bug.
+- 🎨 [STYLE]: Mudanças no código que não afetam seu significado (espaço em branco, formatação, ponto e vírgula, etc).
+- 🧪 [TEST]: Adição ou correção de testes.
+- 🚀 [IMPROVEMENT]: Melhoria em algo já existente, seja de performance, escrita, layout, etc.
+
+O projeto estará disponível no seu navegador em http://localhost:4200 (Angular).
