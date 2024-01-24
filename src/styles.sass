@@ -1,1 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+@import variables
+
+// Body Styling
+html
+  margin: 0
+  padding: 0
+  height: 100vh
+
+  body
+    margin: 0
+    padding: 0
+    height: 100%
+    font-size: 15px
+    font-family: "Roboto", sans-serif
+
+  max-width: 100vw
+
+h1, h2, h3, h4, h5, h6, p
+  margin: 0
+  padding: 0
+  font-family: 'Roboto', sans-serif
+
+.container
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+.grid-container
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  //gap: 1.25rem
+
+.grid-item
+  box-sizing: border-box
+
+.justify-start
+  padding: .5rem .5rem .5rem 0.3rem
+  justify-content: start !important
+
+.justify-end
+  padding: .5rem 0.3rem .5rem .5rem
+  justify-content: end !important
+
+// Fonts
+.font-regular
+  font-family: 'Roboto', sans-serif
+  font-weight: 300
+
+.font-bold
+  font-family: 'Roboto', sans-serif
+  font-weight: bolder
+
+.text-justify
+  text-align: justify
+
+// Paddings and Margin
+// É possível fazer "for" em um arquivo SASS. Sendo assim, criei estes loops para gerar classes de padding e margin
+// Então é possível utilizar "p-1" para obter 1rem de padding, "p-2" para 2rem e assim por diante
+$margin-padding-increment: 1
+$max-increment: 10
+
+@for $i from $margin-padding-increment through $max-increment
+  .m-#{$i}
+    margin: #{$i}rem
+
+@for $i from $margin-padding-increment through $max-increment
+  .p-#{$i}
+    padding: #{$i}rem
+
+// Colors
+.primary-bg
+  background-color: $primary-color
+
+.secondary-bg
+  background-color: $secondary-color
+
+.tertiary-bg
+  background-color: $tertiary-color
+
+.quaternary-bg
+  background-color: $quaternary-color
+
+.red
+  background-color: $color-red
+
+.green
+  background-color: $color-green
+
+.blue
+  background-color: $color-blue
+
+.yellow
+  background-color: $color-yellow
+
+.purple
+  background-color: $color-purple
+
+.brown
+  background-color: $color-brown
+
+// Box-shadow Colors
+.box-red
+  box-shadow: .125rem .25rem .8rem rgba(247, 121, 107, 1.1)
+
+.box-green
+  box-shadow: .125rem .25rem .8rem rgba(78, 194, 167, 1.1)
+
+.box-blue
+  box-shadow: .125rem .25rem .8rem rgba(87, 171, 246, 1.1)
+
+.box-yellow
+  box-shadow: .125rem .25rem .8rem rgba(255, 207, 74, 1.1)
+
+.box-purple
+  box-shadow: .125rem .25rem .8rem rgba(125, 82, 141, 1.1)
+
+.box-brown
+  box-shadow: .125rem .25rem .8rem rgba(178, 116, 108, 1.1)

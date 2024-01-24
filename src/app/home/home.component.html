@@ -1,1 +1,56 @@
-<p>home works!</p>
+<section>
+  <header class="p-3">
+    <h1>
+      What Pokemon<br>
+      are you looking for?</h1>
+  </header>
+
+  <!-- Search -->
+  <app-search></app-search>
+
+  <!-- Card -->
+  <div class="grid-container">
+    <div class="grid-item">
+    <!-- Criei o Justify para que pudesse realizar uma estilização personalizada do componente dependendo de qual coluna ele esteja -->
+      <app-card-menu
+        [justify]="right"
+        [text]="'Pokedex'"
+        [color]="'green'"
+      ></app-card-menu>
+      <app-card-menu
+        [justify]="right"
+        [text]="'Abilities'"
+        [color]="'blue'"
+      ></app-card-menu>
+      <app-card-menu
+        [justify]="right"
+        [text]="'Locations'"
+        [color]="'purple'"
+      ></app-card-menu>
+    </div>
+
+    <div class="grid-item">
+      <app-card-menu
+        [justify]="left"
+        [text]="'Moves'"
+        [color]="'red'"
+      ></app-card-menu>
+      <app-card-menu
+        [justify]="left"
+        [text]="'Items'"
+        [color]="'yellow'"
+      ></app-card-menu>
+      <app-card-menu
+        [justify]="left"
+        [text]="'Type Charts'"
+        [color]="'brown'"
+      ></app-card-menu>
+    </div>
+  </div>
+</section>
+
+<ng-container>
+  <h2>Pokémons News</h2>
+  <!-- Seção de Notícias sobre pokemons com a NewApi -->
+</ng-container>
+
