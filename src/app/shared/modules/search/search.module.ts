@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {SearchComponent} from "./search.component";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {SearchComponent} from "./search.component";
 
 @NgModule({
-  declarations: [],
-  exports: [],
+  declarations: [SearchComponent],
+  exports: [SearchComponent],
   imports: [
     CommonModule,
     FaIconComponent
