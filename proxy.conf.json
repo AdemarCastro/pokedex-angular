@@ -3,6 +3,9 @@
     "target": "https://newsapi.org",
     "secure": false,
     "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
     "logLevel": "debug"
   }
 }

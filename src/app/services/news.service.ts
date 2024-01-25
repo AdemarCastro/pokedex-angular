@@ -7,7 +7,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class NewsService {
-  private apiUrl = 'https://newsapi.org/v2/everything';
+  private apiUrl = '/api/v2/everything';
+  // private apiUrl = '/api/v2/everything';
   private apiKey = environment.apiKey;
 
   constructor(private http: HttpClient) {}
