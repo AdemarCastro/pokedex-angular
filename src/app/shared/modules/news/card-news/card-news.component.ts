@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-card-news',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './card-news.component.sass'
 })
 export class CardNewsComponent {
+  @Input() title: string = '';
+  @Input() description: string = '';
+  @Input() url: string = '';
+  @Input() urlToImage: string = '';
+  @Input() publishedAt: string = '';
 
 }

@@ -1,29 +1,21 @@
-
-<!--
-  Cada Card possui:
-  1 - Título da Notícia
-  2 - Data de publicação
-  3 - Imagem
-  4 - Barra de separação
--->
-
 <section>
-  <div class="container">
-    <div id="info">
-      <div id="title">
-        <p>Pokémon Rumble Rush Arrives Soon</p>
+  <a [href]="url" target="_blank">
+    <div class="container">
+      <div id="info">
+        <div id="title">
+          <p>{{ title }}</p>
+        </div>
+        <div id="date">
+          <p>{{ publishedAt }}</p>
+        </div>
       </div>
-      <div id="date">
-        <p>15 May 2019</p>
+
+      <div class="image">
+        <img [src]="urlToImage" alt="Imagem de um Pokemon" width="120" height="80">
       </div>
     </div>
+  </a>
 
-    <div id="image">
-      <img src="assets/images/pokemon.png" alt="Imagem de um Pokemon">
-    </div>
-
-
-  </div>
-
+  <!-- Separates Components when stacked -->
   <div id="bar"></div>
 </section>

@@ -1,3 +1,11 @@
-<ng-container>
-  <app-card-news></app-card-news>
+<ng-container *ngFor="let newsItem of allNews">
+  <section id="container">
+    <app-card-news
+      [title]="newsItem.title"
+      [description]="newsItem.description"
+      [url]="newsItem.url"
+      [urlToImage]="newsItem.urlToImage"
+      [publishedAt]="newsItem.publishedAt"
+    ></app-card-news>
+  </section>
 </ng-container>
