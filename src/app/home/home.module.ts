@@ -5,6 +5,8 @@ import {RouterModule} from "@angular/router";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {SearchComponent} from "../shared/modules/search/search.component";
 import {CardMenuComponent} from "../shared/modules/card-menu/card-menu.component";
+import {HttpClientModule} from "@angular/common/http";
+import {NewsService} from "../services/news.service";
 
 
 
@@ -16,6 +18,7 @@ import {CardMenuComponent} from "../shared/modules/card-menu/card-menu.component
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     RouterModule.forChild([
       {
         path: '',
@@ -23,6 +26,9 @@ import {CardMenuComponent} from "../shared/modules/card-menu/card-menu.component
       }
     ]),
     FaIconComponent
-  ]
+  ],
+  providers: [
+    NewsService,
+  ],
 })
 export class HomeModule { }
