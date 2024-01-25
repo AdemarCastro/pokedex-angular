@@ -11,6 +11,8 @@ import {DateUtils} from "../../utils/date.utils";
 export class NewsComponent implements OnInit{
   allNews: NewsInterface[] = [];
   news: NewsInterface[] = [];
+  startIndex: number = 0;
+  chunkSize: number = 10;
 
   ngOnInit(): void {
     this.searchNews('Pokemon');
@@ -22,7 +24,7 @@ export class NewsComponent implements OnInit{
     this.newsService.getNews(query).subscribe({
       next: (data) => {
         this.news = data.articles;
-        return this.toTraverseNews(this.news);
+        return this.toTraverseNews();
         // console.log(this.news);
       },
       error: (error) => {
@@ -35,8 +37,8 @@ export class NewsComponent implements OnInit{
   }
 
   // To traverse News
-  toTraverseNews(news: NewsInterface[]) {
-    this.allNews = news.slice(0, 10).map((n) => {
+  toTraverseNews() {
+    this.allNews = this.allNews.concat(this.news.slice(this.startIndex, this.startIndex + this.chunkSize).map((n) => {
       return {
         title: n.title,
         description: n.description,
@@ -44,7 +46,13 @@ export class NewsComponent implements OnInit{
         urlToImage: n.urlToImage,
         publishedAt: DateUtils.date(n.publishedAt, 'dd MMM yyyy')
       }
-    });
+    }));
+
+    this.startIndex += this.chunkSize;
+  }
+
+  hasMoreNews(): boolean {
+    return this.startIndex + this.chunkSize < this.news.length;
   }
 
 }

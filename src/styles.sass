@@ -68,10 +68,28 @@ $max-increment: 10
 @for $i from $margin-padding-increment through $max-increment
   .m-#{$i}
     margin: #{$i}rem
+  .mt-#{$i}
+      margin-top: #{$i}rem
+  .mb-#{$i}
+      margin-bottom: #{$i}rem
+  .mr-#{$i}
+      margin-right: #{$i}rem
+  .ml-#{$i}
+      margin-left: #{$i}rem
+
 
 @for $i from $margin-padding-increment through $max-increment
   .p-#{$i}
     padding: #{$i}rem
+  .pt-#{$i}
+    padding-top: #{$i}rem
+  .pb-#{$i}
+    padding-bottom: #{$i}rem
+  .pr-#{$i}
+    padding-right: #{$i}rem
+  .pl-#{$i}
+    padding-left: #{$i}rem
+
 
 // Colors
 .primary-bg

@@ -1,5 +1,5 @@
 <ng-container *ngFor="let newsItem of allNews">
-  <section id="container">
+  <section>
     <app-card-news
       [title]="newsItem.title"
       [description]="newsItem.description"
@@ -9,3 +9,12 @@
     ></app-card-news>
   </section>
 </ng-container>
+
+<div class="container mt-2 mb-1">
+  <button id="button-view-more" *ngIf="hasMoreNews()" (click)="toTraverseNews()">
+    <a class="container">
+      <p>View more</p>
+      <i class="fa fa-arrow-down" aria-hidden="true"></i>
+    </a>
+  </button>
+</div>
