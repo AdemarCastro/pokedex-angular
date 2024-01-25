@@ -1,10 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsService} from "../../../services/news.service";
-import {query} from "@angular/animations";
-import * as console from "console";
-import * as console from "console";
-import {error} from "@angular/compiler-cli/src/transformers/util";
-import * as console from "console";
 
 @Component({
   selector: 'app-news',

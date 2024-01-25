@@ -7,6 +7,7 @@ import {SearchComponent} from "../shared/modules/search/search.component";
 import {CardMenuComponent} from "../shared/modules/card-menu/card-menu.component";
 import {HttpClientModule} from "@angular/common/http";
 import {NewsService} from "../services/news.service";
+import {NewsModule} from "../shared/modules/news/news.module";
 
 
 
@@ -25,7 +26,8 @@ import {NewsService} from "../services/news.service";
         component: HomeComponent
       }
     ]),
-    FaIconComponent
+    FaIconComponent,
+    NewsModule
   ],
   providers: [
     NewsService,
