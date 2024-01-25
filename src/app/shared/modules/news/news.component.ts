@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsService} from "../../../services/news.service";
 import {NewsInterface} from "../../interfaces/news.interface";
+import {DateUtils} from "../../utils/date.utils";
 
 @Component({
   selector: 'app-news',
@@ -36,14 +37,12 @@ export class NewsComponent implements OnInit{
   // To traverse News
   toTraverseNews(news: NewsInterface[]) {
     this.allNews = news.slice(0, 10).map((n) => {
-      console.log(n.url);
-      console.log(n.urlToImage);
       return {
         title: n.title,
         description: n.description,
         url: n.url,
         urlToImage: n.urlToImage,
-        publishedAt: n.publishedAt
+        publishedAt: DateUtils.date(n.publishedAt, 'dd MMM yyyy')
       }
     });
   }
