@@ -12,7 +12,8 @@
   </ng-container>
 
   <div class="container pt-2 pb-3">
-    <button id="button-view-more" *ngIf="hasMoreNews()" (click)="toTraverseNews()">
+    <!--  Vibrate vem primeiro pois a função 'toTraverNews()' demora para ser executada  -->
+    <button id="button-view-more" *ngIf="hasMoreNews()" (click)="vibrate(); toTraverseNews();">
       <a class="container">
         <p>View more</p>
         <i class="fa fa-arrow-down" aria-hidden="true"></i>
