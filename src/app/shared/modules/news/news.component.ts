@@ -3,6 +3,10 @@ import {NewsService} from "../../../services/news.service";
 import {NewsInterface} from "../../interfaces/news.interface";
 import {DateUtils} from "../../utils/date.utils";
 
+interface Navigator {
+  vibrate?(pattern: number | number[]): boolean;
+}
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -38,6 +42,14 @@ export class NewsComponent implements OnInit{
 
   // To traverse News
   toTraverseNews() {
+
+    // Condição que vibra o dispositivo ao clicar no botão, apenas para dispositivos que possuem tal função
+    // Pattern captura a quantidade de milissegundos em que o dispositivo irá vibrar
+    // Também é possível passar um parâmetro em forma de array como [200, 100, 200] para que o dispositivo vibre por 200ms, pause por 100ms e vibre novamente por 200ms
+    if ('vibrate' in navigator) {
+      navigator.vibrate(100);
+    }
+
     this.allNews = this.allNews.concat(this.news.slice(this.startIndex, this.startIndex + this.chunkSize).map((n) => {
       return {
         title: n.title,
