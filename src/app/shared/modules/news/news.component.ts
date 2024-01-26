@@ -44,7 +44,7 @@ export class NewsComponent implements OnInit{
         description: n.description,
         url: n.url,
         urlToImage: n.urlToImage,
-        publishedAt: DateUtils.date(n.publishedAt, 'dd MMM yyyy')
+        publishedAt: DateUtils.getDate(n.publishedAt, 'dd MMM yyyy')
       }
     }));
 
