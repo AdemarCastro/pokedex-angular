@@ -15,7 +15,7 @@ export class NewsService {
 
   // Método CRUD que retorna o objeto JSON da News API
   getNews(query: string): Observable<any> {
-    const from = '2023-12-25';
+    const from = '2023-12-26';
     const sortBy = 'publishedAt';
 
     const url = `${this.apiUrl}?q=${query}&from=${from}&sortBy=${sortBy}&apiKey=${this.apiKey}`;

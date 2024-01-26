@@ -1,9 +1,15 @@
 @import ../../../../../variables
 
+#card-news a div
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
 // Container Customization
-.container
-  margin-top: 2rem
-  justify-content: space-between
+//.container
+//  margin-top: 2rem
+//  justify-content: space-between
 
 #info
   width: 50%
@@ -13,13 +19,17 @@
   align-items: flex-start
 
 #title
+  width: 90vw
   height: 70px
   overflow: hidden
   p
+    text-align: start
     font-size: .925rem
     font-weight: bold
 
 #date p
+  width: 90vw
+  text-align: start
   font-size: .75rem
   padding-top: .5rem
   color: $secondary-color
@@ -29,13 +39,12 @@
   align-items: center
 
   img
-    width: 120px
-    height: 80px
+    width: 90vw
+    height: auto
     border-radius: 1.5rem
 
 #bar
-  width: 100%
+  width: 100vw
   height: 1px
-  margin-top: 2rem
   background-color: $secondary-color
   //background-color: #e5e5e5
