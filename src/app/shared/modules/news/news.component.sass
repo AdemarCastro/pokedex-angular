@@ -1,16 +1,35 @@
 @import ../../../../variables
 
+// Button
 #button-view-more
   width: 40vw
-  height: 30px
+  height: 40px
+  border: none
   border-radius: 2rem
+  font-size: .825rem
+  background-color: $color-green
 
   a
     display: flex
     justify-content: space-around
 
     p
+      color: $primary-color
       text-align: start
 
     i
+      color: $primary-color
       text-align: end
+
+// Loading
+.loading-spinner
+  text-align: center
+  margin-top: 20px
+
+#icon-loading
+  animation: spin 1000ms infinite normal
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+    transform: rotate(-360deg)

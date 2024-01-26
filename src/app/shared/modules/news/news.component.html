@@ -1,20 +1,26 @@
-<ng-container *ngFor="let newsItem of allNews">
-  <section>
-    <app-card-news
-      [title]="newsItem.title"
-      [description]="newsItem.description"
-      [url]="newsItem.url"
-      [urlToImage]="newsItem.urlToImage"
-      [publishedAt]="newsItem.publishedAt"
-    ></app-card-news>
-  </section>
+<ng-container *ngIf="!loading">
+  <ng-container *ngFor="let newsItem of allNews">
+    <section>
+      <app-card-news
+        [title]="newsItem.title"
+        [description]="newsItem.description"
+        [url]="newsItem.url"
+        [urlToImage]="newsItem.urlToImage"
+        [publishedAt]="newsItem.publishedAt"
+      ></app-card-news>
+    </section>
+  </ng-container>
+
+  <div class="container pt-2 pb-3">
+    <button id="button-view-more" *ngIf="hasMoreNews()" (click)="toTraverseNews()">
+      <a class="container">
+        <p>View more</p>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+      </a>
+    </button>
+  </div>
 </ng-container>
 
-<div class="container pt-2 pb-3">
-  <button id="button-view-more" *ngIf="hasMoreNews()" (click)="toTraverseNews()">
-    <a class="container">
-      <p>View more</p>
-      <i class="fa fa-arrow-down" aria-hidden="true"></i>
-    </a>
-  </button>
+<div *ngIf="loading" class="loading-spinner">
+  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: rgba(78, 194, 167, 1);transform: ;msFilter:;" id="icon-loading"><path d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"></path></svg>
 </div>

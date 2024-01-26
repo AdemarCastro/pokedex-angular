@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {NewsService} from "../../../services/news.service";
 import {NewsInterface} from "../../interfaces/news.interface";
 import {DateUtils} from "../../utils/date.utils";
@@ -12,9 +12,10 @@ interface Navigator {
   templateUrl: './news.component.html',
   styleUrl: './news.component.sass'
 })
-export class NewsComponent implements OnInit{
+export class NewsComponent implements OnInit, AfterViewInit{
   allNews: NewsInterface[] = [];
   news: NewsInterface[] = [];
+  loading: boolean = false;
   startIndex: number = 0;
   chunkSize: number = 10;
 
@@ -22,9 +23,16 @@ export class NewsComponent implements OnInit{
     this.searchNews('Pokemon');
   }
 
+  // Exibir o componente apenas quando for totalmente carregado
+  ngAfterViewInit() : void {
+    this.loading = false;
+  }
+
   constructor(private newsService: NewsService) {}
 
   searchNews(query: string): void {
+    this.loading = true;
+
     this.newsService.getNews(query).subscribe({
       next: (data) => {
         this.news = data.articles;
