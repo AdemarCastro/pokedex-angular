@@ -76,7 +76,7 @@ export class NewsComponent implements OnInit, AfterViewInit{
     // Pattern captura a quantidade de milissegundos em que o dispositivo irá vibrar
     // Também é possível passar um parâmetro em forma de array como [200, 100, 200] para que o dispositivo vibre por 200ms, pause por 100ms e vibre novamente por 200ms
     if ('vibrate' in navigator) {
-      navigator.vibrate(100);
+      navigator.vibrate(65);
     }
   }
 

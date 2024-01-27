@@ -8,6 +8,7 @@ import {CardMenuComponent} from "../shared/modules/card-menu/card-menu.component
 import {HttpClientModule} from "@angular/common/http";
 import {NewsService} from "../services/news.service";
 import {NewsModule} from "../shared/modules/news/news.module";
+import {CardDevelopmentComponent} from "../shared/modules/card-development/card-development.component";
 
 
 
@@ -17,18 +18,19 @@ import {NewsModule} from "../shared/modules/news/news.module";
     SearchComponent,
     CardMenuComponent
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomeComponent
-      }
-    ]),
-    FaIconComponent,
-    NewsModule
-  ],
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        RouterModule.forChild([
+            {
+                path: '',
+                component: HomeComponent
+            }
+        ]),
+        FaIconComponent,
+        NewsModule,
+        CardDevelopmentComponent
+    ],
   providers: [
     NewsService,
   ],
