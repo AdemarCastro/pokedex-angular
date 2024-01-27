@@ -11,6 +11,18 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "/api/v2/everything",
+        "destination": "https://newsapi.org/v2/everything",
+        "type": 200
+      },
+      {
+        "source": "/api",
+        "destination": "https://newsapi.org",
+        "type": 200
+      }
     ]
   }
 }

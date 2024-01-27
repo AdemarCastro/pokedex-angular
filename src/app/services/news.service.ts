@@ -22,6 +22,8 @@ export class NewsService {
     const sortBy = 'publishedAt';
 
     const url = `${this.apiUrl}?q=${query}&from=${from}&sortBy=${sortBy}&apiKey=${this.apiKey}`;
+    console.log(url);
+
     return this.http.get(url);
   }
 }
