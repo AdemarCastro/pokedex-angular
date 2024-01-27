@@ -1,17 +1,45 @@
 <section id="card-news">
-  <a [href]="url" target="_blank">
+  <a target="_blank" (click)="redirectToPage(url)">
     <div class="container pt-1">
       <div class="image">
         <img [src]="urlToImage" alt="Imagem de um Pokemon" width="120" height="80">
       </div>
+    </div>
 
-      <div id="info" class="mt-1 mb-1">
-        <div id="title">
-          <p>{{ title }}</p>
+    <!-- nav-bar-card-news -->
+    <div id="info" class="mt-1 mb-1">
+      <div id="title">
+        <p>{{ title }}</p>
+      </div>
+
+      <div id="bar-info" class="container pt-1">
+        <div id="nameAndDate">
+          <p>{{ companyName }} • {{ publishedAt }}</p>
         </div>
-        <div id="date">
-          <p>{{ publishedAt }}</p>
+
+        <div id="right-bar-news">
+          <button id="buttonHearth" class="pl-2" (click)="clickButton($event);">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </button>
+          <button class="pl-2">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+          </button>
+          <button class="pl-2">
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
         </div>
+        <!--Nome da Empresa-->
+        <!--Data em 'horas' ou 'dias'-->
+        <!--Botão para Curtir a Notícia-->
+        <!--Botão para compartilhar nas Redes Sociais-->
+        <!--Botão de 'Mais opções':
+          1) Não tenho interesse neste item
+          2) Não em um tema
+          3) Não mostrar conteúdo
+          4) Gerenciar meus interesses
+          5) Denunciar
+          6) Enviar feedback
+        -->
       </div>
     </div>
   </a>

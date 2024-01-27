@@ -4,4 +4,8 @@ export interface NewsInterface {
   url: string;
   urlToImage: string;
   publishedAt: string;
+  source: {
+    id: string
+    name: string
+  }
 }

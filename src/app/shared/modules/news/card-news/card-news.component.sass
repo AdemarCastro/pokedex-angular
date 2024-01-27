@@ -1,34 +1,46 @@
 @import ../../../../../variables
 
-#card-news a div
+#card-news a, div
+  z-index: 1
   display: flex
   flex-direction: column
   justify-content: center
   align-items: center
 
 #info
-  width: 50%
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: flex-start
+  width: 100%
+  align-items: center
 
 #title
-  width: 90vw
+  width: 90%
   height: auto
   overflow: hidden
   p
     width: 100%
-    text-align: start
+    text-align: justify
     font-size: .925rem
     font-weight: bold
 
-#date p
-  width: 90vw
+#bar-info
+  width: 90%
+  flex-direction: row !important
+  justify-content: space-between !important
   text-align: start
   font-size: .75rem
-  padding-top: .5rem
   color: $secondary-color
+
+  #right-bar-news
+    flex-direction: row
+
+    button
+      appearance: none
+      border: none
+      background: none
+      outline: none
+
+      i
+        text-align: end
+
 
 .image
   display: flex
@@ -43,3 +55,33 @@
   width: 100vw
   height: 1px
   background-color: $secondary-color
+
+// Animação do Botão de Coração
+
+.buttonHearthMax
+  animation: hearthMax 0.2s ease-in-out
+
+  @keyframes hearthMax
+    0%
+      transform: scale(1)
+      opacity: 1
+    50%
+      transform: scale(1.2)
+      opacity: 0.7
+    100%
+      transform: scale(1)
+      opacity: 1
+
+.buttonHearthMin
+  animation: hearthMin 0.2s ease-in-out
+
+  @keyframes hearthMin
+    0%
+      transform: scale(1)
+      opacity: 1
+    50%
+      transform: scale(0.8)
+      opacity: 0.7
+    100%
+      transform: scale(1)
+      opacity: 1

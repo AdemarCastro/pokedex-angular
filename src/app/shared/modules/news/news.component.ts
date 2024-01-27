@@ -2,6 +2,7 @@ import {AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core
 import {NewsService} from "../../../services/news.service";
 import {NewsInterface} from "../../interfaces/news.interface";
 import {DateUtils} from "../../utils/date.utils";
+import {DateHoursAndDaysUtils} from "../../utils/dateHoursAndDays.utils";
 
 interface Navigator {
   vibrate?(pattern: number | number[]): boolean;
@@ -60,7 +61,11 @@ export class NewsComponent implements OnInit, AfterViewInit{
         description: n.description,
         url: n.url,
         urlToImage: n.urlToImage,
-        publishedAt: DateUtils.getDate(n.publishedAt, 'dd MMM yyyy')
+        publishedAt: DateHoursAndDaysUtils.getDateHoursAndDays((n.publishedAt).toString()),
+        source: {
+          id: n.source.id,
+          name: n.source.name,
+        }
       }
     }));
 
