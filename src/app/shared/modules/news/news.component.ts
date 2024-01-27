@@ -1,7 +1,6 @@
 import {AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {NewsService} from "../../../services/news.service";
 import {NewsInterface} from "../../interfaces/news.interface";
-import {DateUtils} from "../../utils/date.utils";
 import {DateHoursAndDaysUtils} from "../../utils/dateHoursAndDays.utils";
 
 interface Navigator {
