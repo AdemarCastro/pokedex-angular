@@ -14,12 +14,16 @@
 
   <div class="container pt-2 pb-3">
     <!--  Vibrate vem primeiro pois a função 'toTraverNews()' demora para ser executada  -->
-    <button id="button-view-more" *ngIf="hasMoreNews()" (click)="vibrate(); toTraverseNews();">
+    <button id="button-view-more" *ngIf="hasMoreNews()" (click)="tocarMusica(); vibrate(); toTraverseNews();" [disabled]="!botaoHabilitado">
       <a class="container">
         <p>View more</p>
         <i class="fa fa-arrow-down" aria-hidden="true"></i>
       </a>
     </button>
+    <audio id="musica">
+      <source src="../../../../assets/audio/pokemon-button-sound-effects.mp3" type="audio/mp3">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
   </div>
 </ng-container>
 

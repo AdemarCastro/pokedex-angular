@@ -18,7 +18,7 @@ export class NewsService {
   getNews(query: string): Observable<any> {
     // A Utils abaixo serve para buscar a data de 30 dias corridos atrás, pois a NewsAPI na forma gratuíta não permite buscar notícias antes disso
     const from = DateUtils.getNumericDate((DateMonthAgoUtils.getDateMonthAgo()).toString());
-    console.log(from);
+    // console.log(from);
     const sortBy = 'publishedAt';
 
     const url = `${this.apiUrl}?q=${query}&from=${from}&sortBy=${sortBy}&apiKey=${this.apiKey}`;

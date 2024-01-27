@@ -19,6 +19,9 @@ export class NewsComponent implements OnInit, AfterViewInit{
   startIndex: number = 0;
   chunkSize: number = 10;
 
+  botaoHabilitado: boolean = true;
+
+
   constructor(
     private newsService: NewsService,
     private cdr: ChangeDetectorRef
@@ -39,7 +42,7 @@ export class NewsComponent implements OnInit, AfterViewInit{
     this.newsService.getNews(query).subscribe({
       next: (data) => {
         this.news = data.articles;
-        console.log(this.news);
+        // console.log(this.news);
         return this.toTraverseNews();
       },
       error: (error) => {
@@ -82,6 +85,27 @@ export class NewsComponent implements OnInit, AfterViewInit{
 
   hasMoreNews(): boolean {
     return this.startIndex + this.chunkSize < this.news.length;
+  }
+
+  bloquearBotao() {
+    // Desabilita o botão
+    this.botaoHabilitado = false;
+
+    // Tempo em milissegundos que o botão ficará desabilitado (por exemplo, 5 segundos)
+    const intervaloBloqueio = 700;
+
+    // Aguarda o intervalo de tempo e, em seguida, reabilita o botão
+    setTimeout(() => {
+      this.botaoHabilitado = true;
+    }, intervaloBloqueio);
+  }
+
+  tocarMusica() {
+    // Obtém o elemento de áudio
+    const audio = document.getElementById('musica') as HTMLAudioElement;
+
+    // Toca a música
+    audio.play();
   }
 
 }
