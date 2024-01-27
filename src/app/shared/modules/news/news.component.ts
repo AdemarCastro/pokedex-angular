@@ -42,7 +42,7 @@ export class NewsComponent implements OnInit, AfterViewInit{
     this.newsService.getNews(query).subscribe({
       next: (data) => {
         this.news = data.articles;
-        // console.log(this.news);
+        console.log(this.news);
         return this.toTraverseNews();
       },
       error: (error) => {
