@@ -30,7 +30,9 @@
   color: $secondary-color
 
   #right-bar-news
+    width: 30%
     flex-direction: row
+    justify-content: space-between
 
     button
       appearance: none
@@ -40,7 +42,6 @@
 
       i
         text-align: end
-
 
 .image
   display: flex
@@ -57,31 +58,45 @@
   background-color: $secondary-color
 
 // Animação do Botão de Coração
+.heart-bg
+  height: 25px
+  width: 25px
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+  background: rgba(255, 192, 200, 0)
+  transition: all 100ms ease
 
-.buttonHearthMax
-  animation: hearthMax 0.2s ease-in-out
+.heart-icon
+  scale: 0.5
+  height: 100px
+  width: 100px
+  background: url("../../../../../assets/images/heart.png")
+  cursor: pointer
+  position: absolute
 
-  @keyframes hearthMax
-    0%
-      transform: scale(1)
-      opacity: 1
-    50%
-      transform: scale(1.2)
-      opacity: 0.7
-    100%
-      transform: scale(1)
-      opacity: 1
+.heart-icon.liked
+  animation: like-anim 0.7s steps(28) forwards
 
-.buttonHearthMin
-  animation: hearthMin 0.2s ease-in-out
+@keyframes like-anim
+  to
+    background-position: right
 
-  @keyframes hearthMin
-    0%
-      transform: scale(1)
-      opacity: 1
-    50%
-      transform: scale(0.8)
-      opacity: 0.7
-    100%
-      transform: scale(1)
-      opacity: 1
+// Ajuste fino de estilização botão de Ellipsis
+.fa-ellipsis-v
+  padding-left: .4rem
+
+// Mentem o estilo :hover apenas durante o toque em dispositivos móveis
+@media screen and (min-width: 280px)
+  // Resolve o problema de piscar a tag 'a' ao clicar no botão 'heart-icon'
+  a
+    -webkit-tap-highlight-color: transparent
+    tap-highlight-color: transparent
+
+  .heart-bg:active
+    background: rgba(255, 192, 200, 0.7)
+
+@media screen and (min-width: 1300px)
+  .heart-bg:hover
+    background: rgba(255, 192, 200, 0.7)

@@ -22,26 +22,15 @@ export class CardNewsComponent {
   }
 
   clickButton(event: Event) {
+
     // Captura o elemento HTML no qual você clicou da série de elementos gerados pelo *ngFor
     const element = event.currentTarget as HTMLElement;
 
-    // Verifica se a classe buttonHearth está presente
-    const isMax : boolean = element.classList.contains('buttonHearthMax');
-
-    element.classList.remove('buttonHearthMax');
-    element.classList.remove('buttonHearthMin');
-
-    // Remove a classe correspondente
-    if (isMax) {
-
-      element.classList.add('buttonHearthMin');
-    } else {
-
-      element.classList.add('buttonHearthMax');
-    }
+    // Se a classe 'liked' estiver presente, ela será removida; se não estiver, ela será adicionada
+    element.classList.toggle("liked");
 
     // Não propaga o evento de clique para o elemento pai
-    event.stopImmediatePropagation();
+    event.stopPropagation();
   }
 
 }
